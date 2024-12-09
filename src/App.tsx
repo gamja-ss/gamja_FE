@@ -1,5 +1,12 @@
+import { Route, Routes } from "react-router-dom";
+import Home from "./page/home/Home";
+
 function App() {
-  return <main className="bg-slate-200">메인</main>;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+  );
 }
 
 export default App;
