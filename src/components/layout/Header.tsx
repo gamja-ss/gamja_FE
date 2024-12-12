@@ -1,4 +1,4 @@
-import { Logo } from "../config/IconData";
+import { Logo } from "../../config/IconData";
 import { MdDateRange, MdSearch } from "react-icons/md";
 import { TbBell } from "react-icons/tb";
 import { FiUser } from "react-icons/fi";
