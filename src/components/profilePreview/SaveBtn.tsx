@@ -6,8 +6,8 @@ const SaveBtn = () => {
 
   return (
     <div className="flex gap-3">
-      <button className="group w-[49px] h-[49px] p-1 border border-gray-200 bg-gray-100 flex items-center justify-center rounded-xl">
-        <Potato className="group-hover:scale-115" />
+      <button className="group w-[49px] h-[49px] border border-gray-200 bg-gray-100 flex items-center justify-center rounded-xl">
+        <Potato width="26" height="33" className="group-hover:scale-115" />
       </button>
       {tab === "closet" ? (
         <button className="grow hover:text-lg border text-white bg-black rounded-xl flex items-center justify-center">
@@ -15,7 +15,7 @@ const SaveBtn = () => {
         </button>
       ) : (
         <div className="grow flex items-center justify-center gap-2 border rounded-xl">
-          <Coin />
+          <Coin width={24} height={24} />
           <span className="h-[24px] text-xl">200</span>
         </div>
       )}
