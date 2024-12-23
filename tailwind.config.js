@@ -27,7 +27,8 @@ export default {
     },
     fontFamily: {
       default: ["pretendard Variable"],
-      YOnepick: ["YOnepickTTF-Bold"],
+      YOnepickB: ["YOnepickTTF-Bold"],
+      YOnepickR: ["YOnepickTTF-Regular"],
     },
   },
   plugins: [],

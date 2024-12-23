@@ -15,11 +15,11 @@ const TabBtn = () => {
         } group rounded-xl flex items-center justify-center gap-2 p-3`}
         onClick={() => navigate("/inventory/closet")}
       >
-        <Shirt className={`${tab === "closet" ? "fill-black" : "fill-gray-400 group-hover:fill-black"}`} />
+        <Shirt className={`${tab === "closet" ? "fill-black" : "fill-gray-400 group-hover:fill-black"} mt-0.5`} />
         <span
           className={`${
             tab === "closet" ? "text-black" : "text-gray-400 group-hover:text-black"
-          } font-YOnepick text-lg`}
+          } font-YOnepickB text-lg`}
         >
           옷장
         </span>
@@ -32,9 +32,9 @@ const TabBtn = () => {
         } group rounded-xl flex items-center justify-center gap-2 p-3`}
         onClick={() => navigate("/inventory/shop")}
       >
-        <Shop className={`${tab === "shop" ? "fill-black" : "fill-gray-400 group-hover:fill-black"}`} />
+        <Shop className={`${tab === "shop" ? "fill-black" : "fill-gray-400 group-hover:fill-black"} mt-0.5`} />
         <span
-          className={`${tab === "shop" ? "text-black" : "text-gray-400 group-hover:text-black"} font-YOnepick text-lg`}
+          className={`${tab === "shop" ? "text-black" : "text-gray-400 group-hover:text-black"} font-YOnepickB text-lg`}
         >
           상점
         </span>
