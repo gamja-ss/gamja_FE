@@ -8,3 +8,17 @@
   font-weight: 100 900;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "YOnepickTTF-Bold";
+  src: url("/src/assets/font/YOnepick-Bold.ttf") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YOnepickTTF-Regular";
+  src: url("/src/assets/font/YOnepick-Regular.ttf") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
