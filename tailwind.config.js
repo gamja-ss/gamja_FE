@@ -16,10 +16,19 @@ export default {
           900: "#202020",
         },
         blur: "#989898",
+        primary: {
+          lightpotato: "#FAF4EC",
+          potato: "#FFD8A1",
+        },
+      },
+      scale: {
+        115: "1.15",
       },
     },
     fontFamily: {
       default: ["pretendard Variable"],
+      YOnepickB: ["YOnepickTTF-Bold"],
+      YOnepickR: ["YOnepickTTF-Regular"],
     },
   },
   plugins: [],
