@@ -14,14 +14,14 @@ export default defineConfig({
   },
 
   //?LOCAL
-  // server: {
-  //     proxy: {
-  //         "/api": {
-  //             target: "https://api.gamjass.xyz",
-  //             changeOrigin: true,
-  //             secure: false,
-  //             rewrite: (path) => path.replace(/^\/api/, "/api"),
-  //         },
-  //     },
-  // },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://api.gamjass.xyz",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });
