@@ -4,7 +4,7 @@ export interface InventoryItem {
   img: string;
   name: string;
   coin: number;
-  date_of_purchase: Date | null;
+  date_of_purchase: string | null;
 }
 
 export interface InventoryProps {

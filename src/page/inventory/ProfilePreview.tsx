@@ -18,7 +18,7 @@ const ProfilePreview = () => {
         <SaveBtn />
       </div>
       <button
-        className="flex items-center justify-center gap-2 text-gray-400 bg-gray-100 hover:text-black hover:outline hover:outline-gray-200 rounded-xl h-[49px]"
+        className="flex items-center justify-center gap-2 text-gray-400 bg-gray-100 hover:text-black rounded-xl h-[49px]"
         onClick={() => navigate("/")}
       >
         <FaArrowLeft size={14} />
