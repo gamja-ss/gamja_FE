@@ -23,8 +23,8 @@ const SidebarItem = ({ id }: { id: number }) => {
   return (
     <div className="hover:bg-gray-200 cursor-pointer flex justify-between w-[354px] h-[106px] bg-gray-100 rounded-xl py-5 px-5">
       <div className="flex flex-col">
-        <div className="text-xs font-bold">{data[id].title}</div>
-        <div className="text-xs text-[#A1824A] w-[165px] mt-2">{data[id].desc}</div>
+        <div className="text-base font-bold">{data[id].title}</div>
+        <div className="text-sm text-[#A1824A] w-[165px] m1-2">{data[id].desc}</div>
       </div>
       <img src={data[id].src} className="w-[70px] h-[66px] rounded-xl"></img>
     </div>

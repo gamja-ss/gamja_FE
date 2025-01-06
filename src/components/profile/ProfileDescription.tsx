@@ -1,7 +1,7 @@
 import { GoDotFill } from "react-icons/go";
 const ProfileDescription = () => {
   return (
-    <div className="text-xs mb-[45px]">
+    <div className="text-sm mb-[45px]">
       <p className="mt-4 font-semibold">NickName</p>
       <p className="mt-2">Git https://github.com/yoyobar</p>
       <div className="mt-6 flex items-center text-[12px] gap-1">
