@@ -2,10 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { InventoryItem } from "../../config/type";
 import { Coin, Potato } from "../../config/IconData";
-import { formatDate } from "../../utils/dateUtils";
+import dayjs from "dayjs";
 
 const InventoryItemCard: React.FC<InventoryItem> = ({ ...item }) => {
   const { tab } = useParams();
+  const formattedDate = item.date_of_purchase && dayjs(item.date_of_purchase).format("YYYY.MM.DD");
   const buttonStyle = "w-full h-[34px] bg-gray-100 rounded-xl text-sm";
 
   return (
@@ -20,7 +21,7 @@ const InventoryItemCard: React.FC<InventoryItem> = ({ ...item }) => {
       </div>
       {tab === "closet" ? (
         <div className={`${buttonStyle} flex items-center justify-center gap-2 text-gray-400`}>
-          {`${item.date_of_purchase && formatDate(new Date(item.date_of_purchase))} 획득`}
+          {`${formattedDate} 획득`}
         </div>
       ) : item.date_of_purchase ? (
         <div className={`${buttonStyle} flex items-center justify-center text-gray-400`}>보유중</div>

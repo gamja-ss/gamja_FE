@@ -7,7 +7,7 @@ export const closetItems: InventoryItem[] = [
     img: "",
     name: "검정색 곰돌이 귀 비니",
     coin: 200,
-    date_of_purchase: new Date("2024-12-17 11:15:00"),
+    date_of_purchase: "2024-12-17T11:15:00",
   },
   {
     category: "헤어",
@@ -15,6 +15,6 @@ export const closetItems: InventoryItem[] = [
     img: "",
     name: "검정색 곰돌이 귀 비니",
     coin: 200,
-    date_of_purchase: new Date("2024-12-19 12:35:00"),
+    date_of_purchase: "2024-12-19T12:35:00",
   },
 ];

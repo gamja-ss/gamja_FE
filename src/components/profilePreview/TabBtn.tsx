@@ -9,9 +9,7 @@ const TabBtn = () => {
     <div className="grid grid-rows-1 grid-cols-2 gap-2">
       <button
         className={`${
-          tab === "closet"
-            ? "bg-primary-lightpotato outline outline-primary-potato hover:cursor-auto"
-            : "bg-gray-100 hover:outline hover:outline-gray-200"
+          tab === "closet" ? "bg-primary-lightpotato outline outline-primary-potato hover:cursor-auto" : "bg-gray-100"
         } group rounded-xl flex items-center justify-center gap-2 p-3`}
         onClick={() => navigate("/inventory/closet")}
       >
@@ -26,9 +24,7 @@ const TabBtn = () => {
       </button>
       <button
         className={`${
-          tab === "shop"
-            ? "bg-primary-lightpotato outline outline-primary-potato hover:cursor-auto"
-            : "bg-gray-100 hover:outline hover:outline-gray-200"
+          tab === "shop" ? "bg-primary-lightpotato outline outline-primary-potato hover:cursor-auto" : "bg-gray-100"
         } group rounded-xl flex items-center justify-center gap-2 p-3`}
         onClick={() => navigate("/inventory/shop")}
       >
