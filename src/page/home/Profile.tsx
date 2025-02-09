@@ -4,10 +4,12 @@ import ProfileStack from "../../components/profile/ProfileStack";
 
 const Profile = () => {
   return (
-    <div className="w-[354px] h-[700px] border rounded-xl flex flex-col p-5">
-      <ProfileImage />
-      <ProfileDescription />
-      <ProfileStack />
+    <div>
+      <div className="flex-1 border rounded-xl flex flex-col p-5">
+        <ProfileImage />
+        <ProfileDescription />
+        <ProfileStack />
+      </div>
     </div>
   );
 };
