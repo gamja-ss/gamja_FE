@@ -4,20 +4,16 @@ import useAuth from "../../hooks/useAuth";
 import { useEffect } from "react";
 
 const Layout = () => {
-  const { checkAuthStatus, isLoading } = useAuth();
+  const { checkAuthStatus } = useAuth();
 
   useEffect(() => {
     checkAuthStatus();
   }, [checkAuthStatus]);
 
-  if (isLoading) {
-    return <div>Loading...</div>; // 로딩페이지 자리
-  }
-
   return (
     <>
       <Header />
-      <div className="flex my-4 gap-4 justify-center min-w-[1900px] font-default">
+      <div className="flex py-5 gap-4 font-default h-[calc(100vh-65px)]">
         <Outlet />
       </div>
     </>

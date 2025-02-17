@@ -1,14 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 import { FiX } from "react-icons/fi";
 import { Search } from "../../config/IconData";
+import { searchUser } from "../../api/follow";
 
 interface ModalFollowProps {
   onClose: () => void;
 }
 
+interface SearchResult {
+  id: number;
+  is_following: boolean;
+  nickname: string;
+  user_tier: string;
+}
+
 const ModalFollow = ({ onClose }: ModalFollowProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [activeTab, setActiveTab] = useState("all"); // 현재 선택된 탭 ("all", "following", "followers")
+  const [activeTab, setActiveTab] = useState("search"); // 현재 선택된 탭 ("all", "following", "followers")
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResult, setSearchResult] = useState<SearchResult | null>(null);
 
   // 컴포넌트가 마운트되었을 때 input에 포커스
   useEffect(() => {
@@ -25,6 +35,26 @@ const ModalFollow = ({ onClose }: ModalFollowProps) => {
   // 탭 변경 핸들러
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+  };
+
+  // 유저 검색
+  const handleSearchUser = async (nickname: string) => {
+    try {
+      const data = await searchUser(nickname);
+      setSearchResult(data[0]);
+      console.log(searchResult);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const handleSearch = () => {
+    handleTabChange("search");
+    handleSearchUser(searchInput);
   };
 
   return (
@@ -46,18 +76,26 @@ const ModalFollow = ({ onClose }: ModalFollowProps) => {
           <input
             ref={inputRef}
             type="text"
+            value={searchInput}
+            onChange={handleInputChange}
             className="bg-gray-100 w-full rounded-xl py-3 px-4 hover:bg-gray-200 transition"
             placeholder="유저를 검색하세요"
           />
-          <Search className="absolute right-4 top-3 cursor-pointer" />
+          <button
+            onClick={handleSearch}
+            type="button"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center hover:bg-gray-200 rounded-lg transition-all"
+          >
+            <Search className="w-5 h-5" />
+          </button>
         </div>
         {/* 탭 메뉴 */}
         <div className="flex border-b">
           <button
             className={`flex-1 text-center py-2 ${
-              activeTab === "all" ? "border-b-2 border-black font-semibold" : "text-gray-400"
+              activeTab === "search" ? "border-b-2 border-black font-semibold" : "text-gray-400"
             }`}
-            onClick={() => handleTabChange("all")}
+            onClick={() => handleTabChange("search")}
           >
             검색
           </button>
@@ -80,23 +118,26 @@ const ModalFollow = ({ onClose }: ModalFollowProps) => {
         </div>
 
         <div className="h-screen sm:h-96 overflow-y-auto">
-          {activeTab === "all" && (
+          {activeTab === "search" && searchResult && (
             <div>
               {/* "모두" 탭 내용 */}
-              {Array(10)
-                .fill(0)
-                .map((_, index) => (
-                  <div key={index} className="flex items-center justify-between p-2 hover:bg-gray-100">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                      <div className="flex gap-2">
-                        <p className="font-medium">닉네임</p>
-                        <p className="text-sm text-gray-500">Silver 2</p>
-                      </div>
-                    </div>
-                    <button className="bg-black text-white px-3 py-1 rounded-lg text-sm">팔로우</button>
+
+              <div className="flex items-center justify-between p-2 hover:bg-gray-100">
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div className="flex gap-2">
+                    <p className="font-medium">{searchResult.nickname}</p>
+                    <p className="text-sm text-gray-500">{searchResult.user_tier}</p>
                   </div>
-                ))}
+                </div>
+                <button
+                  className={`px-3 py-1 rounded-lg text-sm ${
+                    searchResult.is_following ? "bg-gray-200 text-gray-400" : "bg-black text-white"
+                  }`}
+                >
+                  {searchResult.is_following ? "팔로잉" : "팔로우"}
+                </button>
+              </div>
             </div>
           )}
           {activeTab === "following" && (

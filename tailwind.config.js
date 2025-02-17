@@ -17,18 +17,18 @@ export default {
         },
         blur: "#989898",
         primary: {
-          lightpotato: "#FAF4EC",
-          potato: "#FFD8A1",
+          DEFAULT: "#FFD8A1",
+          light: "#FAF4EC",
         },
       },
       scale: {
         115: "1.15",
       },
-    },
-    fontFamily: {
-      default: ["pretendard Variable"],
-      YOnepickB: ["YOnepickTTF-Bold"],
-      YOnepickR: ["YOnepickTTF-Regular"],
+      fontFamily: {
+        default: ["pretendard Variable"],
+        YOnepickB: ["YOnepickTTF-Bold"],
+        YOnepickR: ["YOnepickTTF-Regular"],
+      },
     },
   },
   plugins: [],

@@ -19,9 +19,11 @@ const Inventory = () => {
 
   return (
     <>
-      <ProfilePreview />
-      <InventoryContainer activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
-      <Sidebar />
+      <div className="mx-auto flex gap-4">
+        <ProfilePreview />
+        <InventoryContainer activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+        <Sidebar />
+      </div>
     </>
   );
 };

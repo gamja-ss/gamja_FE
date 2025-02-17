@@ -5,7 +5,7 @@ const MainRoute = () => {
   const { pathname } = useLocation();
   const router = useNavigate();
   return (
-    <div className="flex gap-1 select-none text-[12px]">
+    <div className="flex gap-1 select-none text-sm">
       <button
         onClick={() => router("/")}
         className={tw(
@@ -25,10 +25,10 @@ const MainRoute = () => {
         TIL
       </button>
       <button
-        onClick={() => router("/battle")}
+        onClick={() => router("/challenge")}
         className={tw(
           "w-[72px] h-[34px] rounded-t-xl bg-gray-200 hover:bg-white text-gray-500 hover:text-black",
-          pathname === "/battle" && "bg-white text-black"
+          pathname === "/challenge" && "bg-white text-black"
         )}
       >
         대결

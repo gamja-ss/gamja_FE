@@ -10,7 +10,7 @@ const TabBtn = () => {
       <button
         className={`${
           tab === "closet"
-            ? "bg-primary-lightpotato outline outline-primary-potato hover:cursor-auto"
+            ? "bg-primary-light outline outline-primary hover:cursor-auto"
             : "bg-gray-100 hover:outline hover:outline-gray-200"
         } group rounded-xl flex items-center justify-center gap-2 p-3`}
         onClick={() => navigate("/inventory/closet")}
@@ -27,7 +27,7 @@ const TabBtn = () => {
       <button
         className={`${
           tab === "shop"
-            ? "bg-primary-lightpotato outline outline-primary-potato hover:cursor-auto"
+            ? "bg-primary-light outline outline-primary hover:cursor-auto"
             : "bg-gray-100 hover:outline hover:outline-gray-200"
         } group rounded-xl flex items-center justify-center gap-2 p-3`}
         onClick={() => navigate("/inventory/shop")}
